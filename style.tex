@@ -1,0 +1,154 @@
+% Set german to default language and load english as well
+\usepackage[english,ngerman]{babel}
+
+% Set UTF8 as input encoding
+\usepackage[utf8]{inputenc}
+
+% Set T1 as font encoding
+\usepackage[T1]{fontenc}
+% Load a slightly more modern font
+\usepackage{lmodern}
+% Use the symbol collection textcomp, which is needed by listings.
+\usepackage{textcomp}
+% Load a better font for monospace.
+\usepackage{courier}
+
+% Set some options regarding the document layout. See KOMA guide
+\KOMAoptions{%
+  paper=a4,
+  fontsize=12pt,
+  parskip=half,
+  headings=normal,
+  BCOR=1cm,
+  headsepline,
+  bibliography=openstyle,
+  DIV=12}
+
+% do not align bottom of pages
+\raggedbottom
+
+% set style of captions
+\setcapindent{0pt} % do not indent second line of captions
+\setkomafont{caption}{\small}
+\setkomafont{captionlabel}{\bfseries}
+\setcapwidth[c]{0.9\textwidth}
+
+% set the style of the bibliography
+\bibliographystyle{alpha}
+
+% load extended tabulars used in the list of abbreviation
+\usepackage{tabularx}
+
+% load the color package and enable colored tables
+\usepackage[table]{xcolor}
+
+% define new environment for zebra tables
+\newcommand{\mainrowcolors}{\rowcolors{1}{maincolor!25}{maincolor!5}}
+\newenvironment{zebratabular}{\mainrowcolors\begin{tabular}}{\end{tabular}}
+\newcommand{\setrownumber}[1]{\global\rownum#1\relax}
+\newcommand{\headerrow}{\rowcolor{maincolor!50}\setrownumber1}
+
+% add main color to section headers
+\addtokomafont{chapter}{\color{maincolor}}
+\addtokomafont{section}{\color{maincolor}}
+\addtokomafont{subsection}{\color{maincolor}}
+\addtokomafont{subsubsection}{\color{maincolor}}
+\addtokomafont{paragraph}{\color{maincolor}}
+
+% do not print numbers next to each formula
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs}
+% left align formulas 
+\makeatletter
+\@fleqntrue\let\mathindent\@mathmargin \@mathmargin=\leftmargini
+\makeatother
+
+% Allow page breaks in align environments
+\allowdisplaybreaks
+
+% header and footer
+\usepackage{scrpage2}
+\pagestyle{scrheadings}
+\setkomafont{pagenumber}{\normalfont\sffamily\color{maincolor}}
+\setkomafont{pageheadfoot}{\normalfont\sffamily}
+\setheadsepline{0.5pt}[\color{maincolor}]
+
+% load TikZ to draw diagrams
+\usepackage{tikz}
+
+% load additional libraries for TikZ
+\usetikzlibrary{%
+  automata,%
+  positioning,%
+}
+
+% set some default options for TikZ -- in this case for automata
+\tikzset{
+  every state/.style={
+    draw=maincolor,
+    thick,
+    fill=maincolor!18,
+    minimum size=0pt
+  }
+}
+
+% load listings package to typeset sourcecode
+\usepackage{listings}
+
+% set some options for the listings package
+\lstset{%
+  numbers=none,%
+  showstringspaces=false,%
+  upquote=true,%
+  basicstyle=\ttfamily,%
+  keywordstyle=\color{keywordcolor}\slshape,%
+  commentstyle=\color{commentcolor}\itshape,%
+  stringstyle=\color{stringcolor},%
+  mathescape=true,%
+  keepspaces=true}
+
+% load the AMS math library to typeset formulas
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{amssymb}
+
+% load the paralist library to use compactitem and compactenum environment
+\usepackage{paralist}
+
+% load varioref and hyperref to create nicer references using vref
+\usepackage[ngerman]{varioref}
+\usepackage{hyperref}
+
+% setup hyperref
+\hypersetup{breaklinks=true,
+            pdfborder={0 0 0},
+            ngerman,
+            pdfhighlight={/N},
+            pdfdisplaydoctitle=true}
+
+% define german names for referenced elements
+% (vref automatically inserts these names in front of the references)
+\labelformat{figure}{Abbildung\ #1}
+\labelformat{table}{Tabelle\ #1}
+\labelformat{appendix}{Anhang\ #1}
+\labelformat{chapter}{Kapitel\ #1}
+\labelformat{section}{Abschnitt\ #1}
+\labelformat{subsection}{Unterabschnitt\ #1}
+\labelformat{subsubsection}{Unterunterabschnitt\ #1}
+
+% define theorem environments
+\declaretheorem[numberwithin=chapter,style=plain]{Theorem}
+\labelformat{Theorem}{Theorem\ #1}
+
+\declaretheorem[sibling=Theorem,style=plain]{Lemma}
+\labelformat{Lemma}{Lemma\ #1}
+
+\declaretheorem[sibling=Theorem,style=definition]{Definition}
+\labelformat{Definition}{Definition\ #1}
+
+\declaretheorem[sibling=Theorem,style=definition]{Beispiel}
+\labelformat{Beispiel}{Beispiel\ #1}
+
+\declaretheorem[sibling=Theorem,style=definition]{Bemerkung}
+\labelformat{Bemerkung}{Bemerkung\ #1}

@@ -1,0 +1,131 @@
+\chapter{Konzept}
+\label{chapter-concept}
+
+In diesem Kapitel wird die eigentliche Erkenntnis dieser Arbeit beschrieben. Der Aufbau dieses Kapitels hängt stark vom Thema der Arbeit ab. Die in dieser Vorlage vorgeschlagenen Kapitel sind auch nur als Vorschlag und auf keinen Fall als verbindlich zu verstehen.
+
+Die folgenden Abschnitte dieses Kapitels enthalten Beispiele für die diversen Inhaltselemente einer Arbeit.
+
+\section{Quellen}
+
+Quellen sind wichtig für gutes wissenschaftliches Arbeiten. Eine Quelle kann dabei zum Beispiel
+\begin{compactitem}
+  \item ein Beitrag in einer Zeitschrift \cite{MopOverview},
+  \item ein Beitrag in einem Sammlungsband \cite{moore},
+  \item ein Buch \cite{scala},
+  \item ein Beitrag im Berichtsband einer Konferenz \cite{rltl},
+  \item ein technischer Bericht \cite{bitkom},
+  \item eine Abschlussarbeit \cite{RltlConv},
+  \item ein noch nicht veröffentlichter Artikel \cite{ptLTL} oder
+  \item ein Artikel auf einer Website \cite{codecommit} sein.
+\end{compactitem}
+
+Dabei ist zu beachten, dass nicht veröffentlichte Artikel und insbesondere Webseiten nur in Ausnahmefällen gute Quellen sind, da diese nicht durch Fachleute begutachtet wurden.
+
+Im Bereich der Informatik können Quellenangaben im Bib\TeX-Format direkt der dblp\footnote{zum Beispiel \url{http://dblp.uni-trier.de}} entnommen werden.
+
+\section{Tabellen}
+
+In \vref{tbl-prozessoren} sehen wir ein Beispiel für eine Tabelle.
+
+\begin{table}
+  \centering
+  \begin{zebratabular}{llr}
+    \headerrow Jahr & Prozessor & MHz \\
+    1975 & 6502 (C64) & 1 \\
+    1985 & 80386 & 16 \\
+    2005 & Pentium 4 & 2\,800 \\
+    2030 & Phoenix 3 & 7\,320\,000 \\
+    \hiderowcolors
+    2050 & \ldots \\
+    2070 & \ldots
+  \end{zebratabular}
+  \caption[Rechengeschwindigkeit von Computern]{Rechengeschwindigkeit von Computern. Inhaltlich vollkommen egal, ist dies doch ein sehr schönes Beispiel für eine Tabelle.}
+  \label{tbl-prozessoren}
+\end{table}
+
+\section{Abbildungen und Diagramme}
+
+In \vref{fig-flower} sehen wir ein Beispiel für eine Abbildung, die aus einer externen Grafik geladen wurde. In \vref{fig-buechi} sehen wir ein Beispiel für eine Abbildung, die in \LaTeX\ generiert wurde.
+
+\begin{figure}
+  \centering
+  \pgfimage[width=.5\textwidth]{flower}
+  \caption[Kurzfassung der Beschreibung für das Abbildungsverzeichnis]{Lange Version der Beschreibung, die direkt unter der Abbildung gesetzt wird. Es ist wichtig, für jede Abbildung eine umfangreiche Beschreibung anzugeben, da der Leser beim ersten Durchblättern der Arbeit vor allem an den Abbildungen hängen bleibt.}
+  \label{fig-flower}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[
+      node distance=15ex,
+      auto,
+      on grid,
+      shorten >=1pt
+    ]
+    \node [state, initial] (q0) {$q_0$};
+    \node [state, accepting, right=of q0] (q1) {$q_1$};
+    \path[->]
+      (q0) edge node {$a$} (q1);
+  \end{tikzpicture}
+  \caption[Graph des Büchi-Automaten $\hat A$.]{Graph des Büchi-Automaten $\hat A$. Der Zustand $q_1$ hat dabei keine ausgehende Kante. Der Zustand ist trotzdem akzeptierend, da beide enthaltenen Zustände von $\acute A$ akzeptierend sind. Die naive Anwendung des Leerheitstests auf alternierenden Büchi-Automaten liefert in diesem Fall also zu viele akzeptierende Zustände.}
+  \label{fig-buechi}
+\end{figure}
+
+\section{Quelltext}
+
+Quelltext sollte in Abschlussarbeiten nur äußerst sparsam eingesetzt werden. Wichtig ist insbesondere, dass Quelltextauszüge sorgsam ausgewählt und gut erklärt werden.
+
+\begin{lstlisting}[language=Java,gobble=2]
+  public class Main {
+    // Hello Word in Java
+    public static void main(String[] args) {
+      System.out.println("Hello World");
+    }
+  }
+\end{lstlisting}
+
+\section{Formeln mit \pdfepsilon}
+
+Das $\epsilon$ in der Überschrift dieses Abschnitts ist ein Beispiel für ein mathematisches Symbol, dass in den PDF-Lesezeichen als reiner Text gesetzt wird. Siehe \texttt{macros.tex}. In dieser Datei wird auch $n \in \N$ definiert.
+
+Wir wissen aus der Analysis, dass
+\begin{align}
+  f(x) &= x^2 + px + q
+\end{align}
+Nullstellen bei
+\begin{align}
+  x_1 &= -\frac p2 + \sqrt{\frac{p^2}4 - q} \text{ und}\\
+  x_2 &= -\frac p2 - \sqrt{\frac{p^2}4 - q}
+\end{align}
+hat.
+
+\section{Theoreme}
+
+\begin{Theorem}[Wichtiger Satz]
+  Ein wichtiger Satz.
+\end{Theorem}
+
+\begin{proof}
+  Der Beweis.
+\end{proof}
+
+\begin{Lemma}[Unwichtiger Hilfssatz]
+  Der Satz \ldots
+\end{Lemma}
+
+\begin{proof}
+  \ldots und sein Beweis.
+\end{proof}
+
+\begin{Definition}[Definition]
+  Eine \emph{Definition} ist die Bestimmung eines Begriffs oder eines mathematischen Zusammenhangs.
+\end{Definition}
+
+\begin{Beispiel}
+  Ein Beispiel.
+\end{Beispiel}
+
+\begin{Bemerkung}
+  Beispiele und Bemerkungen werden nicht in das Verzeichnis der Theoreme und Definitionen aufgenommen.
+\end{Bemerkung}
+
