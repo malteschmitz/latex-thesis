@@ -10,5 +10,6 @@
 *.lot
 *.out
 *.toc
+*.synctex.gz
 # Generated PDF
 thesis.pdf
