@@ -86,6 +86,17 @@ Quelltext sollte in Abschlussarbeiten nur äußerst sparsam eingesetzt werden. W
   }
 \end{lstlisting}
 
+\section{Pseudocode}
+
+Um Algorithmen zu erklären ist Pseudocode viel besser geeignet als Quelltext. Im Pseudocode kann man alles unwichtige weglassen und sich auf die mathematische Modellierung des Algorithmus konzentrieren. So kann die Struktur des Verfahrens unabhängig von Implementierungsdetails des jeweiligen Frameworks erklärt werden.
+
+\begin{lstlisting}[style=pseudo,gobble=2]
+  // Schleife von 1 bis 5
+    for $i \gets 1$ to $5$ do
+      while $S[i] \neq S[S[i]]$ do
+        $S[i] \gets S[S[i]]$
+\end{lstlisting}
+
 \section{Formeln mit \pdfepsilon}
 
 Das $\epsilon$ in der Überschrift dieses Abschnitts ist ein Beispiel für ein mathematisches Symbol, dass in den PDF-Lesezeichen als reiner Text gesetzt wird. Siehe \texttt{macros.tex}. In dieser Datei wird auch $n \in \N$ definiert.

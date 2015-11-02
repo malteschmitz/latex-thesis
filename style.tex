@@ -98,15 +98,31 @@
 
 % set some options for the listings package
 \lstset{%
-  numbers=none,%
-  showstringspaces=false,%
   upquote=true,%
+  showstringspaces=false,%
   basicstyle=\ttfamily,%
   keywordstyle=\color{keywordcolor}\slshape,%
   commentstyle=\color{commentcolor}\itshape,%
-  stringstyle=\color{stringcolor},%
+  stringstyle=\color{stringcolor}}
+
+% enable german umlauts in listings
+\lstset{
+  literate={ö}{{\"o}}1
+           {Ö}{{\"O}}1
+           {ä}{{\"a}}1
+           {Ä}{{\"A}}1
+           {ü}{{\"u}}1
+           {Ü}{{\"U}}1
+           {ß}{{\ss}}1
+}
+
+% define style for pseudo code
+\lstdefinestyle{pseudo}{language={},%
+  basicstyle=\normalfont,%
+  morecomment=[l]{//},%
+  morekeywords={for,to,while,do,if,then,else},%
   mathescape=true,%
-  keepspaces=true}
+  columns=fullflexible}
 
 % load the AMS math library to typeset formulas
 \usepackage{amsmath}
