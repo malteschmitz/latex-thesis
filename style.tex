@@ -135,6 +135,7 @@
 
 % load varioref and hyperref to create nicer references using vref
 \usepackage[ngerman]{varioref}
+\PassOptionsToPackage{hyphens}{url} % allow line break at hyphens in URLs
 \usepackage{hyperref}
 
 % setup hyperref
@@ -143,6 +144,9 @@
             ngerman,
             pdfhighlight={/N},
             pdfdisplaydoctitle=true}
+
+% Fix bugs in some package, e.g. listings and hyperref
+\usepackage{scrhack}
 
 % define german names for referenced elements
 % (vref automatically inserts these names in front of the references)

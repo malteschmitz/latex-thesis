@@ -1,7 +1,7 @@
 \documentclass{scrbook}
 
-\input{style.tex}
-\input{macros.tex}
+\input{style}
+\input{macros}
 
 % Set title and author used in the PDF meta data
 \hypersetup{
@@ -18,10 +18,10 @@
 
 \begin{document}
   \frontmatter
-  \input{title.tex}
-  \input{declaration.tex}
+  \include{title}
+  \include{declaration}
   
-  \input{abstract.tex}
+  \include{abstract}
   
   \cleardoublepage
   \phantomsection
@@ -30,28 +30,27 @@
   \tableofcontents
   
   \mainmatter
-  \input{einleitung.tex}
-  \input{grundlagen.tex}
-  \input{konzept.tex}
-  \input{evaluation.tex}
-  \input{fazit.tex}
+  \include{einleitung}
+  \include{grundlagen}
+  \include{konzept}
+  \include{evaluation}
+  \include{fazit}
   
   \appendix
 
-  \input{appendix.tex}
+  \include{appendix}
   
   \backmatter
 
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Abbildungs- und Tabellenverzeichnis}{listof}
+  \pdfbookmark{Abbildungsverzeichnis}{listof}
   \listoffigures
-  {
-    % print list of tables on same page
-    \let\cleardoublepage\relax
-    \listoftables
-    \thispagestyle{scrheadings}
-  }
+
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{Tabellenverzeichnis}{listof}
+  \listoftables
 
   \cleardoublepage
   \phantomsection
@@ -59,7 +58,7 @@
   \renewcommand{\listtheoremname}{Definitions- und Theoremverzeichnis}
   \listoftheorems[ignoreall,show={Theorem,Lemma,Definition}]
 
-  \input{abkuerzungen.tex}
+  \include{abkuerzungen}
 
   \cleardoublepage
   \phantomsection
