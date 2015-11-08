@@ -115,15 +115,12 @@ hat.
 
 \section{Theoreme}
 
-\begin{Theorem}[Wichtiger Satz]
-  Ein wichtiger Satz.
-\end{Theorem}
-
-\begin{proof}
-  Der Beweis.
-\end{proof}
+\begin{Definition}[Definition]
+  Eine \emph{Definition} ist die Bestimmung eines Begriffs oder eines mathematischen Zusammenhangs.
+\end{Definition}
 
 \begin{Lemma}[Unwichtiger Hilfssatz]
+  \label{lem:hilfssatz}
   Der Satz \ldots
 \end{Lemma}
 
@@ -131,9 +128,22 @@ hat.
   \ldots und sein Beweis.
 \end{proof}
 
-\begin{Definition}[Definition]
-  Eine \emph{Definition} ist die Bestimmung eines Begriffs oder eines mathematischen Zusammenhangs.
-\end{Definition}
+\begin{Theorem}[Wichtiger Satz]
+  \label{thm:wichtig}
+  Ein wichtiger Satz.
+\end{Theorem}
+
+\begin{proof}
+  Der Beweis folgt unter Verwendung der Erkenntnisse aus \vref{lem:hilfssatz}.
+\end{proof}
+
+\begin{Korollar}[Ein Geschenk]
+  Eine unmittelbare Folgerung.
+\end{Korollar}
+
+\begin{proof}
+  Die Folgerung folgt unmittelbar aus \vref{thm:wichtig}.
+\end{proof}
 
 \begin{Beispiel}
   Ein Beispiel.
@@ -142,4 +152,3 @@ hat.
 \begin{Bemerkung}
   Beispiele und Bemerkungen werden nicht in das Verzeichnis der Theoreme und Definitionen aufgenommen.
 \end{Bemerkung}
-
