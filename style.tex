@@ -59,7 +59,7 @@
 % do not print numbers next to each formula
 \usepackage{mathtools}
 \mathtoolsset{showonlyrefs}
-% left align formulas 
+% left align formulas
 \makeatletter
 \@fleqntrue\let\mathindent\@mathmargin \@mathmargin=\leftmargini
 \makeatother
@@ -73,6 +73,9 @@
 \setkomafont{pagenumber}{\normalfont\sffamily\color{maincolor}}
 \setkomafont{pageheadfoot}{\normalfont\sffamily}
 \setheadsepline{0.5pt}[\color{maincolor}]
+
+% German guillemets quotes
+\usepackage[german=guillemets]{csquotes}
 
 % load TikZ to draw diagrams
 \usepackage{tikz}
