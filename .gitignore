@@ -11,6 +11,7 @@
 *.out
 *.toc
 *.tdo
+*.lol
 *.synctex.gz
 # Generated PDF
 thesis.pdf

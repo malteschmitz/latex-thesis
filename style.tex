@@ -103,10 +103,13 @@
 \lstset{%
   upquote=true,%
   showstringspaces=false,%
+  captionpos=b,%
   basicstyle=\ttfamily,%
   keywordstyle=\color{keywordcolor}\slshape,%
   commentstyle=\color{commentcolor}\itshape,%
   stringstyle=\color{stringcolor}}
+\renewcommand{\lstlistingname}{Quelltext}
+\renewcommand{\lstlistlistingname}{Quelltextverzeichnis}
 
 % enable german umlauts in listings
 \lstset{
@@ -163,6 +166,7 @@
 \labelformat{section}{Abschnitt\ #1}
 \labelformat{subsection}{Unterabschnitt\ #1}
 \labelformat{subsubsection}{Unterunterabschnitt\ #1}
+\AtBeginDocument{\labelformat{lstlisting}{Quelltext\ #1}}
 
 % define theorem environments
 \declaretheorem[numberwithin=chapter,style=plain]{Theorem}

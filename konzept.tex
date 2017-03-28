@@ -89,6 +89,21 @@ Quelltext sollte in Abschlussarbeiten nur äußerst sparsam eingesetzt werden. W
   }
 \end{lstlisting}
 
+\subsection{Quelltext mit automatischer Nummerierung}
+
+Manchmal möchte man Quelltext eher als Abbildung und nicht als Fließtext behandeln. In diesem Fall soll der Quelltext eine Bildunterschrift und eine automatische Nummerierung erhalten. Die automatische Nummerierung kann dann natürlich auch in Referenzen verwendet werden: In \vref{lst:java} haben wir Java-Quelltext.
+
+\begin{lstlisting}[language=Java,gobble=2,caption={Ich bin die Bildunterschrift des Quelltextes},label=lst:java]
+  public class AnotherClass {
+    private int number = 0;
+    public void add() {
+      this.number++;
+    }
+  }
+\end{lstlisting}
+
+Wenn man Quelltext mit Bildunterschrift setzt, muss man darauf achten, dass der Quelltext nach wie vor nicht als Fließumgebung behandelt wird. Entsprechend kann es passieren, dass der Quelltext über zwei Seiten hinweg gesetzt wird. Während das normalerweise nicht stört, kann dieser Umstand in Zusammenhang mit einer Bildunterschrift den Leser irritieren.
+
 \section{Pseudocode}
 
 Um Algorithmen zu erklären ist Pseudocode viel besser geeignet als Quelltext. Im Pseudocode kann man alles unwichtige weglassen und sich auf die mathematische Modellierung des Algorithmus konzentrieren. So kann die Struktur des Verfahrens unabhängig von Implementierungsdetails des jeweiligen Frameworks erklärt werden.

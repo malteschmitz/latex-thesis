@@ -64,6 +64,11 @@
   \renewcommand{\listtheoremname}{Definitions- und Theoremverzeichnis}
   \listoftheorems[ignoreall,show={Lemma,Theorem,Korollar,Definition}]
 
+  \cleardoublepage
+  \phantomsection
+  \pdfbookmark{Quelltextverzeichnis}{listoflistings}
+  \lstlistoflistings
+
   \include{abkuerzungen}
 
   \cleardoublepage
