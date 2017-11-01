@@ -6,4 +6,4 @@ LaTeX-Vorlage für Abschlussarbeiten. Angelehnt an die Vorgaben der Sektion MINT
 
 Es handelt sich _nicht_ um eine offizielle Vorlage. Ob diese Vorlage eventuell vorhandenen Gestaltungsvorgaben entspricht, ist im Zweifelsfall mit den jeweils zuständigen Institutionen abzusprechen.
 
-[1]: http://www.mlte.de/thesis?file=files/latex/thesis.pdf
+[1]: https://www.mlte.de/downloads/thesis.pdf
