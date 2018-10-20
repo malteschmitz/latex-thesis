@@ -14,6 +14,8 @@
 \usepackage{textcomp}
 % Load a better font for monospace.
 \usepackage{courier}
+% Load package to configure header and footer
+\usepackage{scrlayer-scrpage}
 
 % Set some options regarding the document layout. See KOMA guide
 \KOMAoptions{%
@@ -23,6 +25,7 @@
   headings=normal,
   BCOR=1cm,
   headsepline,
+  headsepline=0.5pt,
   DIV=12}
 
 % do not align bottom of pages
@@ -68,11 +71,10 @@
 \allowdisplaybreaks
 
 % header and footer
-\usepackage{scrpage2}
 \pagestyle{scrheadings}
 \setkomafont{pagenumber}{\normalfont\sffamily\color{maincolor}}
 \setkomafont{pageheadfoot}{\normalfont\sffamily}
-\setheadsepline{0.5pt}[\color{maincolor}]
+\setkomafont{headsepline}{\color{maincolor}}
 
 % German guillemets quotes
 \usepackage[german=guillemets]{csquotes}
