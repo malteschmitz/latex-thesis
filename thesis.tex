@@ -25,15 +25,16 @@
 
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Inhaltsverzeichnis}{tableofcontents}
-  \markboth{Inhaltsverzeichnis}{}
+  \pdfbookmark{\contentsname}{tableofcontents}
+  \markboth{\contentsname}{}
   \tableofcontents
 
   % Remove this for the final version of the thesis!
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Liste der Todos}{listoftodos}
-  \listoftodos[Liste der Todos]
+  \newcommand{\listtodoname}{Aufgabenverzeichnis}
+  \pdfbookmark{\listtodoname}{listoftodos}
+  \listoftodos[\listtodoname]
 
   \mainmatter
   \include{einleitung}
@@ -50,29 +51,29 @@
 
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Abbildungsverzeichnis}{listoffigures}
+  \pdfbookmark{\listfigurename}{listoffigures}
   \listoffigures
 
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Tabellenverzeichnis}{listoftables}
+  \pdfbookmark{\listtablename}{listoftables}
   \listoftables
 
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Definitions- und Theoremverzeichnis}{listoftheorems}
   \renewcommand{\listtheoremname}{Definitions- und Theoremverzeichnis}
+  \pdfbookmark{\listtheoremname}{listoftheorems}
   \listoftheorems[ignoreall,show={Lemma,Theorem,Korollar,Definition}]
 
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Quelltextverzeichnis}{listoflistings}
+  \pdfbookmark{\lstlistlistingname}{listoflistings}
   \lstlistoflistings
 
   \include{abkuerzungen}
 
   \cleardoublepage
   \phantomsection
-  \pdfbookmark{Literaturverzeichnis}{bibliography}
+  \pdfbookmark{\bibname}{bibliography}
   \bibliography{literature}
 \end{document}
