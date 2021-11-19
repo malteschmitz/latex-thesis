@@ -37,8 +37,10 @@
 \setkomafont{captionlabel}{\bfseries}
 \setcapwidth[c]{0.9\textwidth}
 
-% set the style of the bibliography
-\bibliographystyle{alphadin}
+% load BibLaTeX send set style
+\usepackage[style=alphabetic]{biblatex}
+% load literature database
+\addbibresource{literature.bib}
 
 % load extended tabulars used in the list of abbreviation
 \usepackage{tabularx}

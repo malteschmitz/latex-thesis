@@ -13,5 +13,7 @@
 *.tdo
 *.lol
 *.synctex.gz
+*.bcf
+*.run.xml
 # Generated PDF
 thesis.pdf
