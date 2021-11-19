@@ -1,0 +1,19 @@
+name: TeX Live
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker run -v $(pwd):/wd -w /wd --rm malteschmitz/texlive:20.10 latexmk -pdf thesis
+      - run: |
+          mkdir build
+          mv thesis.pdf build
+      - uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
