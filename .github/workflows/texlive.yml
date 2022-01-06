@@ -10,9 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker run -v $(pwd):/wd -w /wd --rm malteschmitz/texlive:20.10 latexmk -pdf thesis
-      - run: |
-          mkdir build
-          mv thesis.pdf build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: generated-pdf
+          path: thesis.pdf
       - uses: actions/deploy-pages@v1-beta
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
