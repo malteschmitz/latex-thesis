@@ -11,9 +11,6 @@ jobs:
       - run: |
           mkdir build
           mv thesis.pdf build
-      - uses: crazy-max/ghaction-github-pages@v2
+      - uses: actions/deploy-pages@v1-beta
         with:
-          target_branch: gh-pages
-          build_dir: build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
