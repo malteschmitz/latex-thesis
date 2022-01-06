@@ -5,6 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: 'write'
     steps:
       - uses: actions/checkout@v2
       - run: docker run -v $(pwd):/wd -w /wd --rm malteschmitz/texlive:20.10 latexmk -pdf thesis
